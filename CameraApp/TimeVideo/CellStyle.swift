@@ -116,6 +116,7 @@ public class ZoomAndSnapFlowLayout: UICollectionViewFlowLayout {
     private var zoomFactor: CGFloat = 0.0
     var currentMiddle : Int = 0
     var hegiht : CGFloat = 0
+    
     override init() {
         super.init()
         
@@ -177,13 +178,11 @@ public class ZoomAndSnapFlowLayout: UICollectionViewFlowLayout {
         for attributes in rectAttributes where attributes.frame.intersects(visibleRect) {
             let distance = visibleRect.midX - attributes.center.x
             let zoom = 2 -  distance.magnitude / activeDistance
-            print("Zoom => \(zoom)")
+            print("Zoom => \(distance.magnitude)")
             if distance.magnitude < activeDistance {
                 attributes.zIndex = Int(zoom.rounded())
                 self.currentMiddle = attributes.indexPath.item
-                attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1)
-                
-            }
+                attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1)            }
             
         }
         
@@ -227,7 +226,7 @@ public class ZoomAndSnapFlowLayout: UICollectionViewFlowLayout {
 
 
 class ScalingCarouselCustomLayout: UICollectionViewFlowLayout {
-    let activeDistance: CGFloat = 200 * 1
+    let activeDistance: CGFloat = 200
     let zoomFactor: CGFloat = 0.7
     
     var height: CGFloat
@@ -241,7 +240,7 @@ class ScalingCarouselCustomLayout: UICollectionViewFlowLayout {
         scrollDirection = .horizontal
         minimumLineSpacing = 35
         minimumInteritemSpacing = 30
-        //        itemSize = CGSize(width: height, height: height)
+        itemSize = CGSize(width: height, height: height)
     }
     
     required init?(coder aDecoder: NSCoder) {

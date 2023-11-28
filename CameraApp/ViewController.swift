@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     private var collectionViewStyle = SnapFlowLayout()
     private var centerCell : TimeVideoCollectionViewCell?
     
-   private var filterCellStyle = ZoomAndSnapFlowLayout(itemSize: CGSize(width: 42, height: 36), minimumLineSpacing: 35, activeDistance: 150, zoomFactor: 0.3)
+   private var filterCellStyle = ZoomAndSnapFlowLayout(itemSize: CGSize(width: 42, height: 42), minimumLineSpacing: 35, activeDistance: 200, zoomFactor: 0.3)
 //  private var filterCellStyle = ScalingCarouselCustomLayout(height: 42, ratio: 1.0)
     
         override func viewDidLoad() {

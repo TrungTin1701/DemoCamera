@@ -14,4 +14,7 @@ class FilterCameraCell: UICollectionViewCell {
         // Initialization code
     }
 
+    func printSize() {
+        print("cell size: \(self.contentView.bounds.size)")
+    }
 }

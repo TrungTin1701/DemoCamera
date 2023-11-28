@@ -16,7 +16,10 @@ class ViewController: UIViewController {
     private var starringScrollingOffset = CGPoint.zero
     private var collectionViewStyle = SnapFlowLayout()
     private var centerCell : TimeVideoCollectionViewCell?
-    private var filterCellStyle = ZoomAndSnapFlowLayout(itemSize: CGSize(width: 32, height: 32), minimumLineSpacing: 40, activeDistance: 10, zoomFactor: 1.2)
+    
+   private var filterCellStyle = ZoomAndSnapFlowLayout(itemSize: CGSize(width: 42, height: 36), minimumLineSpacing: 35, activeDistance: 150, zoomFactor: 0.3)
+//  private var filterCellStyle = ScalingCarouselCustomLayout(height: 42, ratio: 1.0)
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             self.filterCollectionView.dataSource = self
@@ -36,12 +39,14 @@ class ViewController: UIViewController {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-       let layout: CGFloat = self.timeVideoCollectionView.bounds.width/5 - 10
+        let layout: CGFloat = self.timeVideoCollectionView.bounds.width/5 - 10
         let sideInsert = (self.timeVideoCollectionView.frame.width / 2) - layout/2
         self.timeVideoCollectionView.contentInset = UIEdgeInsets(top: 0, left: sideInsert , bottom: 0, right: sideInsert)
         
         self.timeVideoCollectionView.scrollToItem(at: IndexPath(row: 2, section: 0), at: .centeredHorizontally, animated: false)
+
 //        self.filterCollectionView.scrollToItem(at: IndexPath(row: 2, section: 0), at: .centeredHorizontally, animated: false)
+        self.filterCellStyle.calculateSize()
     }
     
     func viewSetup(){
@@ -85,6 +90,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
+
+    
 }
 
 

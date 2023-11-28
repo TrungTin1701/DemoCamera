@@ -12,36 +12,45 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FilterCameraCell" customModule="CameraApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+            <rect key="frame" x="0.0" y="0.0" width="130" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                <rect key="frame" x="0.0" y="0.0" width="130" height="90"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-5a-DXm">
-                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                        <color key="tintColor" systemColor="systemMintColor"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQ3-NG-8jD">
+                        <rect key="frame" x="1" y="1" width="128" height="88"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-5a-DXm">
+                                <rect key="frame" x="10" y="10" width="108" height="68"/>
+                                <color key="tintColor" systemColor="systemMintColor"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="32" id="Ie4-ra-zZr"/>
-                            <constraint firstAttribute="width" constant="32" id="aJD-TH-YvU"/>
+                            <constraint firstItem="1DL-5a-DXm" firstAttribute="leading" secondItem="qQ3-NG-8jD" secondAttribute="leading" constant="10" id="9R9-0c-tJr"/>
+                            <constraint firstItem="1DL-5a-DXm" firstAttribute="top" secondItem="qQ3-NG-8jD" secondAttribute="top" constant="10" id="Gh6-et-el1"/>
+                            <constraint firstAttribute="trailing" secondItem="1DL-5a-DXm" secondAttribute="trailing" constant="10" id="bne-mx-ari"/>
+                            <constraint firstAttribute="bottom" secondItem="1DL-5a-DXm" secondAttribute="bottom" constant="10" id="wfF-a9-tbj"/>
                         </constraints>
-                    </imageView>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="1DL-5a-DXm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8C8-Wh-hYy"/>
-                <constraint firstAttribute="bottom" secondItem="1DL-5a-DXm" secondAttribute="bottom" id="Dju-pm-wHJ"/>
-                <constraint firstAttribute="trailing" secondItem="1DL-5a-DXm" secondAttribute="trailing" id="ETY-xh-nFR"/>
-                <constraint firstItem="1DL-5a-DXm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fzu-8N-1HU"/>
+                <constraint firstItem="qQ3-NG-8jD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="9l3-x8-Tl3"/>
+                <constraint firstAttribute="bottom" secondItem="qQ3-NG-8jD" secondAttribute="bottom" constant="1" id="Rwh-dy-Lol"/>
+                <constraint firstAttribute="trailing" secondItem="qQ3-NG-8jD" secondAttribute="trailing" constant="1" id="WY1-cf-x28"/>
+                <constraint firstItem="qQ3-NG-8jD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="bvL-Ll-dhA"/>
             </constraints>
-            <point key="canvasLocation" x="9" y="20"/>
+            <size key="customSize" width="130" height="90"/>
+            <point key="canvasLocation" x="-64.122137404580144" y="8.4507042253521139"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="filter" width="512" height="512"/>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
